@@ -2,10 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-app.get('/api/leaders', (req, res) => {
-  return res.status(200).send(leaderList);
-});
-
 if(process.env.NODE_ENV !== 'development'){
 // statically serve everything in the build folder on the route '/build'
 app.use('/build', express.static(path.join(__dirname, '../build')));
