@@ -1,16 +1,14 @@
 import React from "react";
-import topicState from "/src/components/BookmarkCreator.jsx";
 
-
-
-function Tab(props){
+export default function TabContainer(props){
+    let tabArray = []
+    for(let i = 0; i < props.state.length; i++){
+        console.log(props.state)
+        tabArray.push(<li>{props.state[i]}</li>)
+    }
     return (
-        <li>Tab</li>
-    )
-}
-
-export default function TabContainer(){
-    return (
-        <Tab></Tab>
+        <ul className="tabList">
+            {tabArray}
+        </ul>
     )
 }
