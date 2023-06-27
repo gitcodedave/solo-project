@@ -15,9 +15,9 @@ module.exports = {
         },
         compress: true,
         port: 8080,
-        proxy: {
-          '/api': 'http://localhost:3000'
-        }
+        // proxy: {
+        //   '/api': 'http://localhost:3000'
+        // }
       },
       plugins: [new HtmlWebpackPlugin({
         title: 'development',
