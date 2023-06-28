@@ -9,17 +9,17 @@ export default function BookmarkCreator(props){
     topicState = event.target.value;
   }
 
-  const handleClick = function(){
-    props.func(topicState)
+  const handleAddTopicClick = function(){
+    props.func({ tabName: topicState, selected: false})
     // console.log(topicState)
     let allForms = document.querySelectorAll('input');
     allForms.forEach(eachInput => eachInput.value = '');
   }
   return (
-        <div>
+        <div id='Bookmark Creator'>
         <input placeholder="New Topic" onChange={handleChange} ></input>
         <input placeholder="Paste URL"></input>
-        <button onClick={handleClick}>ADD TOPIC</button>
+        <button onClick={handleAddTopicClick}>ADD TOPIC</button>
         </div>
   )
 }

@@ -2,13 +2,13 @@ import React from "react";
 
 export default function TabContainer(props){
     let tabArray = []
+    // console.log(props.state[props.state.length - 1])
     for(let i = 0; i < props.state.length; i++){
-        console.log(props.state)
-        tabArray.push(<li>{props.state[i]}</li>)
+        tabArray.push(<button key={props.state[i].tabName + 'tab'} >{props.state[i].tabName}</button>)
     }
     return (
-        <ul className="tabList">
+        <div id='tab list' className="tabList">
             {tabArray}
-        </ul>
+        </div>
     )
 }

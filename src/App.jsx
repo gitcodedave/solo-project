@@ -5,7 +5,7 @@ import MainContainer from "../src/containers/MainContainer.jsx"
 
 const App = () => {
   return ( 
-    <div>
+    <div id='app container'>
     <MainContainer></MainContainer>
     </div>
   )
