@@ -1,14 +1,15 @@
 import React from "react"
 
-function Bookmark (){
-    return (
-        <p>Bookmark Feed</p>
-    )
-}
 
 export default function BookmarkContainer(props){
+    for(let i = 0; i < props.state.length; i++){
+        for(let bookmark of props.state[i].bookmarks)
+        console.log(bookmark.url)
+    }
     
     return (
-       <Bookmark></Bookmark>
+        <div id='bookmark list' className="BookmarkList">
+            {'nothing'}
+        </div>
     )
 }

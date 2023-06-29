@@ -3,23 +3,29 @@ import React from "react"
 
 export default function BookmarkCreator(props){
   let topicState = ''
+  let urlState = ''
 
 
-  const handleChange = function(event){
+  const handleTabChange = function(event){
     topicState = event.target.value;
   }
 
-  const handleAddTopicClick = function(){
-    props.func({ tabName: topicState, selected: false})
+  const handleURLChange = function(event){
+    urlState = event.target.value;
+  }
+
+  const handleAddTabClick = function(){
+    props.addTab({ tabName: topicState, selected: false}, urlState)
     // console.log(topicState)
     let allForms = document.querySelectorAll('input');
     allForms.forEach(eachInput => eachInput.value = '');
   }
+  
   return (
         <div id='Bookmark Creator'>
-        <input placeholder="New Topic" onChange={handleChange} ></input>
-        <input placeholder="Paste URL"></input>
-        <button onClick={handleAddTopicClick}>ADD TOPIC</button>
+        <input placeholder="New Topic" onChange={handleTabChange} ></input>
+        <input placeholder="Paste URL" onChange={handleURLChange}></input>
+        <button onClick={handleAddTabClick}>ADD TOPIC</button>
         </div>
   )
 }
