@@ -1,14 +1,36 @@
+
 h1 {
     color: rgb(0, 0, 0);
   }
 
-.bookmarkcreator {
-    display: flex;
-}
-
 body {
     background-color: rgb(29, 29, 29);
 }
+* {
+    padding: 1px;
+    margin: 3px;
+}
+h2, h4 {
+    max-width: 250px;
+}
+
+div.bookmarks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+       
+}
+
+div.bookmark {
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-left: 20px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+}
+
 
 .tabList {
     display: flex;
