@@ -1,24 +1,100 @@
+* {
+    padding: 0px;
+    margin: 3px;
+}
+a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
 
 h1 {
     color: rgb(0, 0, 0);
   }
 
+h2, h4 {
+    max-width: 250px;
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid #747474;
+    height: 20px;
+    padding: 5px;
+    color: white;
+}
+
+input:focus {
+    outline-color: rgb(126, 42, 182);
+    outline-width: 1;
+}
+
 body {
     background-color: rgb(29, 29, 29);
 }
-* {
-    padding: 1px;
-    margin: 3px;
+
+.bookmarkCreator {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
 }
-h2, h4 {
-    max-width: 250px;
+.selectedButton {
+    width: 200px;
+    height: 28px;
+    background-color: rgb(157, 54, 225);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+}
+.selectedButton:hover {
+    background-color: rgb(126, 42, 182);
+}
+.unSelectedButton {
+    width: 200px;
+    height: 28px;
+    background-color: rgb(29, 29, 29);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+}
+.unSelectedButton:hover {
+    background-color: rgb(48, 48, 48);
+}
+.submitButton {
+    width: 150px;
+    height: 32px;
+    background-color: rgb(157, 54, 225);
+    color: white;
+    border: none;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+}
+.submitButton:hover {
+    background-color: rgb(126, 42, 182);
 }
 
 div.bookmarks {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-       
+    flex-wrap: wrap;   
 }
 
 div.bookmark {
@@ -26,7 +102,7 @@ div.bookmark {
     display: flex;
     flex-direction: column;
     color: white;
-    margin-left: 20px;
+    margin-left: 10px;
     font-family: 'PT Sans', sans-serif;
     font-size: 12px;
 }

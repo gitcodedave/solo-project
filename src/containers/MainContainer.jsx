@@ -60,11 +60,13 @@ export default function MainContainer(props){
                 
                 for(let value of list.values()){
                     let pageLink = newLink + value.pathname
-                    let pageTitle = value.ariaLabel
+                    let pageTitle = value.ariaLabel;
                     let description = value.lastChild.lastChild.childNodes[2].innerText
+                    let date = value.lastChild.lastChild.childNodes[0].innerText;
+                    // console.log(date)
                     if(description !== 'Read more') description = description + ' Read more'
                     //let imageUrl = value.getElementsByTagName('img')
-                    bookmarkArray.push({url: pageLink, title: pageTitle, description: description})
+                    bookmarkArray.push({url: pageLink, title: pageTitle, description: description, date: date})
                 }
                 
             return bookmarkArray

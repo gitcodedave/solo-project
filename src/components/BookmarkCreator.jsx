@@ -22,10 +22,10 @@ export default function BookmarkCreator(props){
   }
   
   return (
-        <div id='Bookmark Creator'>
-        <input placeholder="New Topic" onChange={handleTabChange} ></input>
-        <input placeholder="Paste URL" onChange={handleURLChange}></input>
-        <button onClick={handleAddTabClick}>ADD TOPIC</button>
+        <div id='Bookmark Creator' className="bookmarkCreator">
+        <input size="20" placeholder="New Topic" onChange={handleTabChange} ></input>
+        <input size="50" placeholder="Paste URL" onChange={handleURLChange}></input>
+        <button className="submitButton" onClick={handleAddTabClick}>Submit</button>
         </div>
   )
 }
