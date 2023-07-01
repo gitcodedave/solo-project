@@ -8,6 +8,7 @@ import { useState } from 'react';
 data: 
    { tabs: [{ 
         tabName: '',
+        fancyTab: '',
         selected: true,
         bookmarks: [{ 
             url: '',
@@ -20,7 +21,7 @@ data:
 
 export default function MainContainer(props){
     const [data, setData] = useState({
-        tabs: [{ tabName: 'All', selected: true, bookmarks: []}],
+        tabs: [{ tabName: 'All', fancyTab: 'All', selected: true, bookmarks: []}],
     })
 
     const selectTab = function(tabName){
@@ -38,6 +39,14 @@ export default function MainContainer(props){
     }
     const addTab = async function (input, link) {
         let newLink = ''
+        let fancyTabFirstLetter = input.tabName[0].toUpperCase()
+        let fancyTabRest = ''
+        for(let i = 1; i < input.tabName.length; i++){
+            fancyTabRest = fancyTabRest + input.tabName[i]
+        }
+        fancyTabRest = fancyTabRest.toLowerCase()
+        console.log(fancyTabRest)
+        let fancyTab = fancyTabFirstLetter + fancyTabRest
         for(let i = 0; i < link.length; i++){
             if(link[i - 3] + link[i - 2] + link[i - 1] + link[i] === '.com'){
                 newLink = newLink + link[i];
@@ -45,9 +54,6 @@ export default function MainContainer(props){
             } 
             else newLink = newLink + link[i]
         }
-        // let images = await fetch('https://www.nintendo.com/whatsnew/')
-        //     .then(data => data.text())
-        // console.log(images)
         let bookmarks = await fetch('https://www.nintendo.com/whatsnew/')
             .then(data => data.text())
             .then(html => {
@@ -73,6 +79,7 @@ export default function MainContainer(props){
             })
 
         input.bookmarks = bookmarks;
+        input.fancyTab = fancyTab;
         
         setData({
             tabs: [...data.tabs, input],

@@ -9,9 +9,9 @@ export default function TabContainer(props){
     
     for(let i = 0; i < props.state.length; i++){
         if(props.state[i].selected === true){
-        tabArray.push(<button className="selectedButton" key={props.state[i].tabName + 'tab'} value={props.state[i].tabName} onClick={() => handleTabClick(props.state[i].tabName)}>{props.state[i].tabName}</button>)
+        tabArray.push(<button className="selectedButton" key={props.state[i].tabName + 'tab'} value={props.state[i].tabName} onClick={() => handleTabClick(props.state[i].tabName)}>{props.state[i].fancyTab}</button>)
         } else {
-            tabArray.push(<button className="unSelectedButton" key={props.state[i].tabName + 'tab'} value={props.state[i].tabName} onClick={() => handleTabClick(props.state[i].tabName)}>{props.state[i].tabName}</button>)
+            tabArray.push(<button className="unSelectedButton" key={props.state[i].tabName + 'tab'} value={props.state[i].tabName} onClick={() => handleTabClick(props.state[i].tabName)}>{props.state[i].fancyTab}</button>)
         }
     }
     return (
